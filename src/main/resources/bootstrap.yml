@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: ABC-DE-FGHI
+  profiles:
+    active:
+      default

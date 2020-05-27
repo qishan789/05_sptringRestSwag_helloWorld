@@ -1,0 +1,41 @@
+server:
+  port: 8082
+  tomcat:
+    accesslog:
+      enabled:
+        true
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://otherhost:8762/eureka/,http://localhost:8761/eureka/,http://otherhost:8762/eureka/
+
+logging:
+  file: log/testrun.log
+  pattern:
+    file: "%d %-5level [%thread] %logger:%L: %msg%n"
+  level:
+    root: DEBUG
+    com.netflix: WARN
+    org.springframework.web: DEBUG
+    org.springframework.security : DEBUG
+    com.thoughtmechanix: DEBUG
+      
+appConfig.mykey01:
+  got_set
+
+management.security.enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+    enabled-by-default: true
+#    beans:
+#      enabled: true
+#    autoconfig:
+#      enabled: true
+       
